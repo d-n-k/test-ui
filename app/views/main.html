@@ -1,0 +1,37 @@
+
+<div class="row">
+    <table class="table table-hover">
+        <thead>
+            <tr ng-init="order='id'; asc=false">
+                <th style="cursor: pointer" ng-click="order = 'id'; asc = asc ? false : true">Index
+                <i ng-show="order == 'id'" class="glyphicon glyphicon-chevron-{{asc ? 'down' : 'up'}}"></i></th>
+
+                <th style="cursor: pointer" ng-click="order = 'first_name'; asc = asc ? false : true">First Name
+                <i ng-show="order == 'first_name'" class="glyphicon glyphicon-chevron-{{asc ? 'down' : 'up'}}"></i></th>
+
+                <th style="cursor: pointer" ng-click="order = 'last_name'; asc = asc ? false : true">Last Name
+                <i ng-show="order == 'last_name'" class="glyphicon glyphicon-chevron-{{asc ? 'down' : 'up'}}"></i></th>
+
+                <th style="cursor: pointer" ng-click="order = 'email'; asc = asc ? false : true">E-mail
+                <i ng-show="order == 'email'" class="glyphicon glyphicon-chevron-{{asc ? 'down' : 'up'}}"></i></th>
+
+                <th style="cursor: pointer" ng-click="order = 'country'; asc = asc ? false : true">Country
+                <i ng-show="order == 'country'" class="glyphicon glyphicon-chevron-{{asc ? 'down' : 'up'}}"></i></th>
+
+                <th style="cursor: pointer" ng-click="order = 'ip_address'; asc = asc ? false : true">IP Address
+                <i ng-show="order == 'ip_address'" class="glyphicon glyphicon-chevron-{{asc ? 'down' : 'up'}}"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="animate-repeat" ng-repeat="item in data | orderBy: order : asc">
+                <td>{{item.id}}</td>
+                <td>{{item.first_name}}</td>
+                <td>{{item.last_name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.country}}</td>
+                <td>{{item.ip_address}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
